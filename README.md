@@ -2,10 +2,15 @@
 
 ## If Build fails due to error "_reactNativeVersion...." in "react-native-linear-gradient" plugin then make following changes
 in
+
 node_modules/react-native-linear-gradient/android/build.gradle
+
 Change
+
 compileOnly "com.facebook.react:react-native:${_reactNativeVersion}"
+
 To
+
 compile "com.facebook.react:react-native:0.55.4"
 
 ## Git url for this issue 
