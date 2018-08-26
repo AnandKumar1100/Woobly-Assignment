@@ -8,7 +8,7 @@ compileOnly "com.facebook.react:react-native:${_reactNativeVersion}"
 To
 compile "com.facebook.react:react-native:0.55.4"
 
-## Git Issues url 
+## Git url for this issue 
 https://github.com/react-native-community/react-native-linear-gradient/issues/336?_pjax=%23js-repo-pjax-container
 
 
@@ -25,5 +25,5 @@ npm uninstall --save babel-preset-react-native
 npm install --save babel-preset-react-native@4.0.0
 react-native run-android
 
-## StackOverFlow url
+## Stackoverflow url for this issue
 https://stackoverflow.com/questions/48756550/unable-to-resolve-module-accessibilityinfo-when-trying-to-create-release-bund
