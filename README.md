@@ -20,14 +20,23 @@ https://github.com/react-native-community/react-native-linear-gradient/issues/33
 ## If Build fails due to errors like "Unable to resolve module 'AccessibilityInfo', when trying to create release bundle...." then follow:
 
 react-native init AwesomeProject
+
 cd AwesomeProject
+
 react-native run-android
+
 npm uninstall react-native
+
 npm install --save react-native@0.55.4
+
 react-native run-android
+
 npm install --save babel-core@latest babel-loader@latest
+
 npm uninstall --save babel-preset-react-native
+
 npm install --save babel-preset-react-native@4.0.0
+
 react-native run-android
 
 ## Stackoverflow url for this issue
