@@ -50,7 +50,7 @@ const RestaurantDetails = ({ scaleImage, animateImage, toggleReadMoreStatus, sho
                     </View>
                     <View style={{ marginTop: 30 }}>
                         <LinearGradient
-                            style={{ width: deviceWidth, height: deviceHeight / 4, position: 'absolute', zIndex: -1 }}
+                            style={{ width: deviceWidth, height: deviceHeight / 2.5, position: 'absolute', zIndex: -1}}
                             colors={['transparent', 'black', 'black', 'black']} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }} >
                         </LinearGradient>
                         <Text style={{ color: "white", fontSize: 14, paddingHorizontal: 25, fontFamily: "Roboto-Bold" }}>WOOBLY PREMIUM PRIVILEGES</Text>
