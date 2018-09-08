@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "263488017003",
+    "firebase_url": "https://woobly-56227.firebaseio.com",
+    "project_id": "woobly-56227",
+    "storage_bucket": "woobly-56227.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263488017003:android:5c6316dcc99b375c",
+        "android_client_info": {
+          "package_name": "com.woobly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263488017003-uh6s987qk34g0hge7af9oj3ttuusandi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7BkgiFEadVnZOGe4hD5E9BJZhFktRuGI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

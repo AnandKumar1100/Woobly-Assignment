@@ -4,8 +4,8 @@ import {Item, Input} from 'native-base'
 import Login from './LoginRender'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as restaurantDetailsActions from './RestaurantDetailsAction'
-import * as constants from '../../Constants'
+import * as loginActions from './LoginAction'
+import * as commonConstants from '../../Constants'
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -30,13 +30,13 @@ class LoginContainer extends Component{
         }else{
         this.props.actions.saveFormValues(formValues)
         this.props.actions.SaveRestaurantDetails()
-        this.goToScreen(constants.RESTAURANT_DETAILS_SCREEN)
+        this.goToScreen(commonConstants.RESTAURANT_DETAILS_SCREEN)
         }
     }
 
     onPressSkipBtn(){
         this.props.actions.SaveRestaurantDetails()
-        this.goToScreen(constants.RESTAURANT_DETAILS_SCREEN)
+        this.goToScreen(commonConstants.RESTAURANT_DETAILS_SCREEN)
     }
 
     renderInput({ input, label, type }){
@@ -65,7 +65,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-        const actionsToBind = Object.assign({}, restaurantDetailsActions)
+        const actionsToBind = Object.assign({}, loginActions)
         return {
             actions: bindActionCreators(actionsToBind, dispatch)
         }

@@ -3,6 +3,7 @@ import { Animated, Easing, Dimensions, Text, Image, View } from 'react-native';
 import ExploreRestaurant from './ExploreRestaurantRender'
 import * as constants from '../../Constants'
 import Swiper from 'react-native-swiper';
+import firebase from 'react-native-firebase';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -25,6 +26,12 @@ class ExploreRestaurantContainer extends Component{
     }
 
     componentDidMount() {
+
+        // I have written this code here because currently their is no actions declared for this class
+        firebase.analytics().setCurrentScreen("Explore Restaurant Screen");
+        firebase.analytics().logEvent(`Page_${"Explore_Restaurant"}`, {});
+
+
         this.progresBar.setValue(0);
         this.animateProgressBar()
     }

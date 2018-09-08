@@ -88,7 +88,7 @@ class RestaurantDetailsContainer extends Component{
 }
 
 
-const mapStateToProps = (state) => { debugger
+const mapStateToProps = (state) => {
     return {
         photos : state.RestaurantDetailsRedux.restaurantDetails
     }

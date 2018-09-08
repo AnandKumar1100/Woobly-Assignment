@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Text, View, ScrollView, Animated, Easing, Dimensions, TouchableOpacity } from 'react-native';
 import { Container, Header, Form, Item, Input, Label, Button } from 'native-base'
-import * as constants from '../../Constants'
 import {Field, reduxForm} from 'redux-form'
 
 const deviceHeight = Dimensions.get('window').height;

@@ -1,6 +1,7 @@
 export const EXPLORE_RESTAURANT_SCREEN = "ExploreRestaurantScreen"
 export const RESTAURANT_DETAILS_SCREEN = "RestaurantDetailsScreen"
 export const LOGIN_SCREEN = "LoginScreen"
+export const SAVE_FORM_VALUES = "SAVEFORMVALUES"
 
 export const photos = [
     { uri: "https://b.zmtcdn.com/data/pictures/3/18157413/850fd0753b38552e155254309551e8b2.jpg?fit=around%7C800%3A1200&crop=800%3A1200%3B%2A%2C%2A" },
