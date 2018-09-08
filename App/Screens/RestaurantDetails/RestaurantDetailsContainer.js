@@ -5,8 +5,6 @@ import * as constants from './constants'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// import * as commonConstants from '../../Constants'
-
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
@@ -64,7 +62,7 @@ class RestaurantDetailsContainer extends Component{
     }
 
     goToScreen(){
-        this.props.navigation.navigate("ExploreRestaurantScreen")
+        this.props.navigation.navigate("FooterNavigation")
     }
 
     render(){

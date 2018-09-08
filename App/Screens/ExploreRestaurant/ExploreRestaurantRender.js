@@ -11,7 +11,7 @@ import Carousel from 'react-native-snap-carousel';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
-const ExploreRestaurant = ({ goToScreen, currentActiveTabIndex, selectCurrentTab, _renderItem }) => {
+const ExploreRestaurant = ({ goToScreen, _renderItem }) => {
     return (
         <Container>
             <Content contentContainerStyle={{ flexGrow: 1 }}>
@@ -29,26 +29,6 @@ const ExploreRestaurant = ({ goToScreen, currentActiveTabIndex, selectCurrentTab
                 </View>
                 <View style={{ flex:0.03 }}/>
             </Content>
-            <Footer>
-                <FooterTab style={{backgroundColor:"black"}}>
-                    <Button vertical onPress={()=>selectCurrentTab(0)}>
-                        <Image source={require('../../assets/explore.png')} style={{ height: 18, width: 20, resizeMode: "contain" }} />
-                        {currentActiveTabIndex  == 0 ? <Text style={{color:"#2bddeb", fontSize:12.2}}>Explore</Text> : null}
-                    </Button>
-                    <Button vertical onPress={()=>selectCurrentTab(1)}>
-                        <Image source={require('../../assets/userIcon.png')} style={{ height: 20, width: 20, resizeMode: "contain" }} />
-                        {currentActiveTabIndex  == 1 ? <Text style={{color:"#2bddeb", fontSize:12.2}}>User</Text> :  null }
-                    </Button>
-                    <Button vertical onPress={()=>selectCurrentTab(2)}>
-                        <Image source={require('../../assets/calenderIcon.png')} style={{ height: 20, width: 18, resizeMode: "contain" }} />
-                        {currentActiveTabIndex  == 2 ? <Text style={{color:"#2bddeb", fontSize:12.2}}>Calendar</Text> : null }
-                    </Button>
-                    <Button vertical onPress={()=>selectCurrentTab(3)}>
-                        <Image source={require('../../assets/search.png')} style={{ height: 18, width: 18, resizeMode: "contain" }} />
-                        {currentActiveTabIndex  == 3 ? <Text style={{color:"#2bddeb", fontSize:12.2}}>Search</Text> : null }
-                    </Button>
-                </FooterTab>
-            </Footer>
         </Container>
     )
 }

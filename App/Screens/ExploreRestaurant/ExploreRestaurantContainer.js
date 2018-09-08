@@ -12,7 +12,6 @@ class ExploreRestaurantContainer extends Component{
     constructor(props){
         super(props)
         this.state={
-           currentActiveTabIndex : 0,
            currentSliderIndex : 0,
            currentImageIndex : 0
         }
@@ -20,7 +19,6 @@ class ExploreRestaurantContainer extends Component{
         this.progresBar = new Animated.Value(0);
         this.animateProgressBar = this.animateProgressBar.bind(this)
         this.goToScreen = this.goToScreen.bind(this)
-        this.selectCurrentTab = this.selectCurrentTab.bind(this)
         this._renderItem = this._renderItem.bind(this)
         this.setImageIndex = this.setImageIndex.bind(this)
     }
@@ -68,8 +66,8 @@ class ExploreRestaurantContainer extends Component{
         );
     }
 
-    goToScreen(){
-        
+    goToScreen(screen, params){
+        this.props.navigation.navigate(screen)
     }
 
     animateProgressBar(){
@@ -85,15 +83,9 @@ class ExploreRestaurantContainer extends Component{
         this.setState({ currentImageIndex : index })
     }
 
-    selectCurrentTab(index){
-        this.setState({ currentActiveTabIndex : index })
-    }
-
     render(){
         return(
-            <ExploreRestaurant goToScreen={this.goToScreen} currentActiveTabIndex={this.state.currentActiveTabIndex} 
-            selectCurrentTab={this.selectCurrentTab}
-            _renderItem={this._renderItem}/>
+            <ExploreRestaurant goToScreen={this.goToScreen} _renderItem={this._renderItem}/>
         )
     }
 
