@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Text, View, ScrollView, Animated, Easing, Dimensions, TouchableOpacity } from 'react-native';
-import { Container, Header, Left, Body, Right } from 'native-base'
+import { Container, Header, Left, Body, Right, Footer } from 'native-base'
 import Swiper from 'react-native-swiper';
 import LinearGradient from 'react-native-linear-gradient'
 import CustomCard from "../../Components/CustomCard"
@@ -10,7 +10,7 @@ import * as constants from './constants'
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
-const RestaurantDetails = ({ scaleImage, animateImage, toggleReadMoreStatus, shouldShowReadMore, currentIndex, progresBarWidth }) => {
+const RestaurantDetails = ({ scaleImage, animateImage, toggleReadMoreStatus, shouldShowReadMore, currentIndex, progresBarWidth, goToScreen, photos }) => {
     return (
         <Container>
             <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: "#000000" }}>
@@ -84,7 +84,7 @@ const RestaurantDetails = ({ scaleImage, animateImage, toggleReadMoreStatus, sho
                     <View style={{ marginTop: 24, marginLeft: 25, marginRight: 25 }}>
                         <Text style={{ fontSize: 14, color: "white", fontFamily: "Roboto-Bold" }}>PHOTOS & VIDEOS</Text>
                         <ScrollView style={{ marginTop: 24 }} horizontal={true} showsHorizontalScrollIndicator={false}>
-                            {constants.photos.map((eachPhoto, index) => <Image key={index} source={eachPhoto} style={{ height: deviceHeight / 5.84, width: deviceWidth / 3.05, borderRadius: 10, marginRight: 8, resizeMode: "cover" }} />)}
+                            {photos.map((eachPhoto, index) => <Image key={index} source={eachPhoto} style={{ height: deviceHeight / 5.84, width: deviceWidth / 3.05, borderRadius: 10, marginRight: 8, resizeMode: "cover" }} />)}
                         </ScrollView>
                     </View>
                     <View style={{ marginTop: 22, borderBottomWidth: 1, borderBottomColor: "#4e4e4e", marginLeft: 25, marginRight: 25 }} />
@@ -99,7 +99,7 @@ const RestaurantDetails = ({ scaleImage, animateImage, toggleReadMoreStatus, sho
                                 <Text style={{ fontSize: 14, color: "white", fontFamily: "Roboto-Regular" }}>Retro 90’s Hits</Text>
                             </View>
                         </View>
-                        <View style={{ flex: 1, marginTop: 14, flexDirection: "row" }}>
+                        <View style={{ flex: 1, marginTop: 14, flexDirection: "row", paddingBottom:deviceHeight / 7.51 }}>
                             <View>
                                 <Image source={require('../../assets/musicIcon.png')} style={{ width: 28, height: 28 }} />
                             </View>
@@ -108,17 +108,25 @@ const RestaurantDetails = ({ scaleImage, animateImage, toggleReadMoreStatus, sho
                                 <Text style={{ fontSize: 14, color: "white", fontFamily: "Roboto-Regular" }}>House, Top 40, Chill House, Commercial</Text>
                             </View>
                         </View>
-                    </View>
-                    <View style={{ marginTop: deviceHeight / 7.51, borderTopWidth: 1, borderTopColor: "#4e4e4e", height: deviceHeight / 10.68, flex: 1, flexDirection: "row" }}>
-                        <View style={{ flex: 0.50, justifyContent: "center", paddingLeft: 24 }}>
-                            <Text style={{ color: "white", fontSize: 14 }}><Text style={{ fontFamily: "Roboto-Bold" }}>₹1800</Text> per person</Text>
-                        </View>
-                        <View style={{ flex: 0.50, justifyContent: "center", alignItems: "flex-end", paddingRight: 16 }}>
-                            <TouchableOpacity activeOpacity={0.5} style={{ width: deviceWidth / 2.57, height: deviceHeight / 14.86, backgroundColor: "white", borderRadius: 25, justifyContent: "center", alignItems: "center" }}><Text style={{ fontSize: 16, color: "black", fontFamily: "Roboto-Bold" }}>BOOK A TABLE</Text></TouchableOpacity>
-                        </View>
+                        {/* <View style={{ marginTop: deviceHeight / 7.51, borderTopWidth: 1, borderTopColor: "#4e4e4e", height: deviceHeight / 10.68, flex: 1, flexDirection: "row" }}>
+                            <View style={{ flex: 0.50, justifyContent: "center", paddingLeft: 24 }}>
+                                <Text style={{ color: "white", fontSize: 14 }}><Text style={{ fontFamily: "Roboto-Bold" }}>₹1800</Text> per person</Text>
+                            </View>
+                            <View style={{ flex: 0.50, justifyContent: "center", alignItems: "flex-end", paddingRight: 16 }}>
+                                <TouchableOpacity activeOpacity={0.5} style={{ width: deviceWidth / 2.57, height: deviceHeight / 14.86, backgroundColor: "white", borderRadius: 25, justifyContent: "center", alignItems: "center" }}><Text style={{ fontSize: 16, color: "black", fontFamily: "Roboto-Bold" }}>BOOK A TABLE</Text></TouchableOpacity>
+                            </View>
+                        </View> */}
                     </View>
                 </View>
             </ScrollView>
+            <Footer style={{ borderTopWidth: 1, borderTopColor: "#4e4e4e", height: deviceHeight / 10.68, flexDirection: "row", backgroundColor: "#000000" }}>
+                <View style={{ flex: 0.50, justifyContent: "center", paddingLeft: 24 }}>
+                    <Text style={{ color: "white", fontSize: 14 }}><Text style={{ fontFamily: "Roboto-Bold" }}>₹1800</Text> per person</Text>
+                </View>
+                <View style={{ flex: 0.50, justifyContent: "center", alignItems: "flex-end", paddingRight: 16 }}>
+                    <TouchableOpacity onPress={goToScreen} activeOpacity={0.5} style={{ width: deviceWidth / 2.57, height: deviceHeight / 14.86, backgroundColor: "white", borderRadius: 25, justifyContent: "center", alignItems: "center" }}><Text style={{ fontSize: 16, color: "black", fontFamily: "Roboto-Bold" }}>BOOK A TABLE</Text></TouchableOpacity>
+                </View>
+            </Footer>
         </Container>
     )
 }

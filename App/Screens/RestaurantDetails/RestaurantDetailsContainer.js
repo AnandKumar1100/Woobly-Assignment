@@ -2,6 +2,10 @@ import React, { Component } from "react"
 import { Animated, Easing, Dimensions, Text } from 'react-native';
 import RestaurantDetails from './RestaurantDetailsRender'
 import * as constants from './constants'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+// import * as commonConstants from '../../Constants'
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
@@ -18,6 +22,7 @@ class RestaurantDetailsContainer extends Component{
         this.animateProgressBar = this.animateProgressBar.bind(this)
         this.animateImage = this.animateImage.bind(this)
         this.toggleReadMoreStatus = this.toggleReadMoreStatus.bind(this)
+        this.goToScreen = this.goToScreen.bind(this)
     }
 
     componentDidMount() {
@@ -58,6 +63,10 @@ class RestaurantDetailsContainer extends Component{
         this.setState({ shouldShowReadMore: !this.state.shouldShowReadMore })
     }
 
+    goToScreen(){
+        this.props.navigation.navigate("ExploreRestaurantScreen")
+    }
+
     render(){
         const scaleImage = this.animatedImage.interpolate({
             inputRange: [0,10],
@@ -68,12 +77,28 @@ class RestaurantDetailsContainer extends Component{
             inputRange: [0,1],
             outputRange: [0, deviceWidth/constants.photos.length-70/constants.photos.length ]
         })
+        const {photos} = this.props
         return(
             <RestaurantDetails scaleImage={scaleImage} animateImage={this.animateImage} shouldShowReadMore={this.state.shouldShowReadMore} 
-            toggleReadMoreStatus={this.toggleReadMoreStatus} currentIndex={this.state.currentIndex} progresBarWidth={progresBarWidth}/>
+            toggleReadMoreStatus={this.toggleReadMoreStatus} currentIndex={this.state.currentIndex} progresBarWidth={progresBarWidth}
+            goToScreen={this.goToScreen} photos={photos}/>
         )
     }
 
 }
 
-export default RestaurantDetailsContainer
+
+const mapStateToProps = (state) => { debugger
+    return {
+        photos : state.RestaurantDetailsRedux.restaurantDetails
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+        const actionsToBind = Object.assign({})
+        return {
+            actions: bindActionCreators(actionsToBind, dispatch)
+        }
+}        
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantDetailsContainer);
